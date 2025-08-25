@@ -115,9 +115,7 @@ in rec {
     then makeOverride {
       name = "fsevent-sys";
       overrideAttrs = drv: {
-        propagatedBuildInputs = drv.propagatedBuildInputs or [ ] ++ [
-          pkgs.darwin.apple_sdk.frameworks.CoreServices
-        ];
+        propagatedBuildInputs = drv.propagatedBuildInputs or [ ];
       };
     }
     else  nullOverride;
@@ -126,9 +124,7 @@ in rec {
     then makeOverride {
       name = "reqwest";
       overrideAttrs = drv: {
-        propagatedBuildInputs = drv.propagatedBuildInputs or [ ] ++ [
-          pkgs.darwin.apple_sdk.frameworks.Security
-        ];
+        propagatedBuildInputs = drv.propagatedBuildInputs or [ ];
       };
     }
     else  nullOverride;
@@ -162,8 +158,6 @@ in rec {
       name = "libgit2-sys";
       overrideAttrs = drv: {
         propagatedBuildInputs = drv.propagatedBuildInputs or [ ] ++ [
-          pkgs.darwin.apple_sdk.frameworks.Security
-          pkgs.darwin.apple_sdk.frameworks.CoreFoundation
           pkgs.libgit2
         ];
         preferLocalBuild = true;
@@ -252,7 +246,7 @@ in rec {
     then makeOverride {
       name = "rand";
       overrideAttrs = drv: {
-        propagatedBuildInputs = drv.propagatedBuildInputs or [ ] ++ [ pkgs.darwin.apple_sdk.frameworks.Security ];
+        propagatedBuildInputs = drv.propagatedBuildInputs or [ ];
       };
     }
     else nullOverride;
@@ -261,7 +255,7 @@ in rec {
     then makeOverride {
       name = "rand_os";
       overrideAttrs = drv: {
-        propagatedBuildInputs = drv.propagatedBuildInputs or [ ] ++ [ pkgs.darwin.apple_sdk.frameworks.Security ];
+        propagatedBuildInputs = drv.propagatedBuildInputs or [ ];
       };
     }
     else nullOverride;
@@ -270,7 +264,7 @@ in rec {
   then makeOverride {
     name = "sqlx-macros";
     overrideAttrs = drv: {
-      propagatedBuildInputs = drv.propagatedBuildInputs or [ ] ++ [ pkgs.darwin.apple_sdk.frameworks.SystemConfiguration ];
+      propagatedBuildInputs = drv.propagatedBuildInputs or [ ];
     };
   }
   else nullOverride;
@@ -289,7 +283,7 @@ in rec {
     then makeOverride {
       name = "ring";
       overrideAttrs = drv: {
-        propagatedBuildInputs = drv.propagatedBuildInputs or [ ] ++ [ pkgs.darwin.apple_sdk.frameworks.Security ];
+        propagatedBuildInputs = drv.propagatedBuildInputs or [ ];
       };
     }
     else nullOverride;
